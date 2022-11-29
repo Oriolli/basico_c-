@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace MyApp
 {
@@ -13,6 +14,15 @@ namespace MyApp
       var change = String.Format("{0:r}", data);
       var changa = String.Format("{0:s}", data);
       var chango = String.Format("{0:u}", data);
+
+
+      var pt = new CultureInfo("pt-PT");
+      var br = new CultureInfo("pt-BR");
+      var en = new CultureInfo("en-US");
+      var de = new CultureInfo("de-DE");
+      var atual = CultureInfo.CurrentCulture;
+
+
 
       if (data.Date > DateTime.Now.Date)
       {
@@ -32,6 +42,9 @@ namespace MyApp
       Console.WriteLine(data.AddDays(-12));
       Console.WriteLine(data.AddMonths(1));
       Console.WriteLine(data.AddYears(1));
+
+      Console.WriteLine(DateTime.Now.ToString("D", en));
+      //Console.WriteLine(string.Format("{0:D}", DateTime.Now));
     }
   }
 }
