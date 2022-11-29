@@ -9,7 +9,18 @@ namespace MyApp
     {
       Console.Clear();
       var data = DateTime.Now;
+      var dateTime = DateTime.UtcNow;
+      var timezoneAustralia = TimeZoneInfo.FindSystemTimeZoneById("Pacific/Auckland");
       var formatada = String.Format("{0:dd/MM/yyyy hh:mm:ss ff z}", data);
+      var horaAustralia = TimeZoneInfo.ConvertTimeFromUtc(dateTime, timezoneAustralia);
+      var timezones = TimeZoneInfo.GetSystemTimeZones();
+      foreach (var timezone in timezones)
+      {
+        Console.WriteLine(timezone.Id);
+        Console.WriteLine(timezone);
+        Console.WriteLine(TimeZoneInfo.ConvertTimeFromUtc(dateTime, timezone));
+        Console.WriteLine("-------------------------");
+      }
       var alterada = String.Format("{0:D}", data);
       var change = String.Format("{0:r}", data);
       var changa = String.Format("{0:s}", data);
@@ -32,7 +43,10 @@ namespace MyApp
       {
         Console.WriteLine("Não é igual");
       }
-
+      Console.WriteLine(DateTime.Now);
+      Console.WriteLine(dateTime);
+      Console.WriteLine(dateTime.ToLocalTime());
+      Console.WriteLine(timezoneAustralia);
       Console.WriteLine(formatada);
       Console.WriteLine(alterada);
       Console.WriteLine(change);
