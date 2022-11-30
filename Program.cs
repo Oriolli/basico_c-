@@ -21,6 +21,12 @@ namespace MyApp
         Console.WriteLine(TimeZoneInfo.ConvertTimeFromUtc(dateTime, timezone));
         Console.WriteLine("-------------------------");
       }
+
+      var timeSpan = new TimeSpan();
+      Console.WriteLine(timeSpan);
+
+
+
       var alterada = String.Format("{0:D}", data);
       var change = String.Format("{0:r}", data);
       var changa = String.Format("{0:s}", data);
