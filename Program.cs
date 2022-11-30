@@ -8,6 +8,7 @@ namespace MyApp
     static void Main(string[] args)
     {
       Console.Clear();
+
       var data = DateTime.Now;
       var dateTime = DateTime.UtcNow;
       var timezoneAustralia = TimeZoneInfo.FindSystemTimeZoneById("Pacific/Auckland");
@@ -39,6 +40,12 @@ namespace MyApp
       var de = new CultureInfo("de-DE");
       var atual = CultureInfo.CurrentCulture;
 
+
+      decimal valor = 10.25m;
+      Console.WriteLine(valor.ToString("C", CultureInfo.CreateSpecificCulture("pt-BR")));
+      //C - exibe como moeda
+      //N - somente o número sem formatação de moeda
+      //P - exibe a porcentagem
 
 
       if (data.Date > DateTime.Now.Date)
