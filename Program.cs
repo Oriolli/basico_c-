@@ -41,6 +41,25 @@ namespace MyApp
       var atual = CultureInfo.CurrentCulture;
 
 
+      var meuArray = new int[5] { 0, 1, 2, 3, 4 };
+
+      for (var index = 0; index < meuArray.Length; index++)
+      {
+        Console.WriteLine(meuArray[index]);
+      }
+
+      foreach (var item in meuArray)
+      {
+        Console.WriteLine(item);
+      }
+
+      Console.WriteLine(meuArray[0]);
+      Console.WriteLine(meuArray[1]);
+      Console.WriteLine(meuArray[2]);
+      Console.WriteLine(meuArray[3]);
+      Console.WriteLine(meuArray[4]);
+
+
       decimal valor = 10536.25m;
       Console.WriteLine(valor.ToString("C", CultureInfo.CreateSpecificCulture("pt-BR")));
       Console.WriteLine(Math.Round(valor));
